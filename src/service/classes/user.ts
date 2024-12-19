@@ -1,10 +1,10 @@
-import { iGear, iSkills, iUser } from '../types/user.types';
+import { APIGear, APISkills, APIUser } from '../types/user.types';
 
 export class User {
   id: string;
   gear: Gear;
   skills: Skills;
-  constructor(data: iUser) {
+  constructor(data: APIUser) {
     this.id = data.id;
     this.gear = new Gear(this, data.gear);
     this.skills = new Skills(this, data.skills);
@@ -14,7 +14,7 @@ export class User {
 class Gear {
   user: User;
   offhand: number | null;
-  constructor(user: User, data: iGear) {
+  constructor(user: User, data: APIGear) {
     this.user = user;
     this.offhand = data.offhand;
   }
@@ -23,7 +23,7 @@ class Gear {
 class Skills {
   user: User;
   agility: number;
-  constructor(user: User, data: iSkills) {
+  constructor(user: User, data: APISkills) {
     this.user = user;
     this.agility = data.agility;
   }

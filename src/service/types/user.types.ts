@@ -1,15 +1,15 @@
-export interface iUser {
+export interface APIUser {
   id: string;
-  gear: iGear;
-  skills: iSkills;
+  gear: APIGear;
+  skills: APISkills;
 }
 
-export interface iGear {
-  user: iUser;
+export interface APIGear {
+  user: APIUser;
   offhand: number | null;
 }
 
-export interface iSkills {
-  user: iUser;
+export interface APISkills {
+  user: APIUser;
   agility: number;
 }
