@@ -13,9 +13,11 @@ export class User {
 
 class Gear {
   user: User;
+  mainhand: number | null;
   offhand: number | null;
   constructor(user: User, data: APIGear) {
     this.user = user;
+    this.mainhand = data.mainhand;
     this.offhand = data.offhand;
   }
 }
@@ -23,8 +25,12 @@ class Gear {
 class Skills {
   user: User;
   agility: number;
+  fishing: number;
+  cooking: number;
   constructor(user: User, data: APISkills) {
     this.user = user;
     this.agility = data.agility;
+    this.fishing = data.fishing;
+    this.cooking = data.cooking;
   }
 }
