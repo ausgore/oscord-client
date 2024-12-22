@@ -5,7 +5,7 @@ import { User } from './classes/user';
 export class UserManager {
   static cache: Map<string, User> = new Map();
 
-  static async create(id: string, data?: Partial<Omit<APIUser, 'id'>>) {
+  static async create(id: string, data: Partial<Omit<APIUser, 'id'>> = {}) {
     const response = await axios.post<APIUser>(`${process.env.API_URL}/users/create/${id}`, data);
     const user = new User(response.data);
     this.cache.set(id, user);
