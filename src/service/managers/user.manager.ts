@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { APIUser } from '../types/user.types';
-import { User } from '../classes/user';
+import { User } from '../classes/user.classes';
 
 export class UserManager {
   static cache: Map<string, User> = new Map();
